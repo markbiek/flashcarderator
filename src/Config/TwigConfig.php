@@ -13,6 +13,7 @@ namespace FCR\Config;
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+use Twig\Extension\DebugExtension;
 
 /**
  * Manages Twig environment configuration and provides singleton access.
@@ -41,11 +42,12 @@ class TwigConfig
             self::$_instance = new Environment(
                 $loader,
                 [
-                    'cache' => __DIR__ . '/../../cache/twig',
+                    'cache' => false,
                     'auto_reload' => true,
                     'debug' => true
                 ]
             );
+            self::$_instance->addExtension(new DebugExtension());
         }
         return self::$_instance;
     }

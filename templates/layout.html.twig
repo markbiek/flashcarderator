@@ -4,24 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Flashcarderator{% endblock %}</title>
+    <link rel="stylesheet" href="css/app.css">
+	<script src="main.js"></script>
 </head>
 <body>
     <header>
         <h1>Flashcarderator</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/decks">Decks</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        {% block content %}{% endblock %}
+		<section class="card">
+			<h2 class="card-spanish">{{ card.spanish }}</h2>
+			<h3 class="card-translation">{{ card.translation }}</h3>
+		</section>
     </main>
-
-    <footer>
-        <p>&copy; {{ "now"|date("Y") }} Flashcarderator. All rights reserved.</p>
-    </footer>
 </body>
 </html> 

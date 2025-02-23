@@ -13,6 +13,16 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use FCR\Config\TwigConfig;
 
+// Load Spanish phrases
+$spanishData = require __DIR__ . '/data/spanish.php';
+
+// Pick a random phrase
+$randomKey = array_rand($spanishData);
+$randomPhrase = [
+    'spanish' => $randomKey,
+    'translation' => $spanishData[$randomKey]
+];
+
 // Initialize Twig
 $twig = TwigConfig::getInstance();
 
@@ -20,6 +30,6 @@ $twig = TwigConfig::getInstance();
 echo $twig->render(
     'layout.html.twig',
     [
-        'pageTitle' => 'Welcome to Flashcarderator'
+        'card' => $randomPhrase
     ]
 ); 
