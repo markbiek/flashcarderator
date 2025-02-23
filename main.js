@@ -8,4 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Add click handler for the "Try another one" button.
+  document.querySelector(".card-button").addEventListener("click", () => {
+    window.location.reload();
+  });
 });
