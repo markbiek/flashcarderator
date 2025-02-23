@@ -6,13 +6,20 @@
  * @package  FCR
  * @author   Flashcarderator Team <team@flashcarderator.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @link     https://github.com/flashcarderator
+ * @link     https://github.com/flashcarderator.
  */
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-// Initialize application
-use FCR\App;
+use FCR\Config\TwigConfig;
 
-// Basic test to ensure autoloading works
-echo "Flashcarderator initialized successfully!\n"; 
+// Initialize Twig
+$twig = TwigConfig::getInstance();
+
+// Render a template
+echo $twig->render(
+    'layout.html.twig',
+    [
+        'pageTitle' => 'Welcome to Flashcarderator'
+    ]
+); 
