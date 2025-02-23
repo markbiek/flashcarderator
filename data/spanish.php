@@ -23,7 +23,7 @@ return [
     // Instead of "no, gracias" group
     'estoy bien, pero gracias' => 'no, gracias',
     'no por ahora, gracias' => 'no, gracias',
-    'hoy paso, per gracias' => 'no, gracias',
+    'hoy paso, pero gracias' => 'no, gracias',
     'la próxima' => 'no, gracias',
     
     // Instead of "Que pasa?" group
